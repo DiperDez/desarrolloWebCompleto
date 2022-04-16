@@ -36,7 +36,7 @@ a{
 }
 
 img{
-    max-width: 100%;
+    width: 100%;
 }
 
 h1,
@@ -68,12 +68,26 @@ h3{ font-size: 2.4rem; }
     margin: 3rem 0;
 }
 
+/** Footer **/ 
+.footer{
+    background-color: var(--primaryDark);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    font-family: var(--principalFont);
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+
 /** Nav **/
 .navegacion_principal{
     background-color: var(--primaryDark);
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    /* gap: 2rem; */
     padding: 1rem 0;
 }
 
@@ -81,6 +95,11 @@ h3{ font-size: 2.4rem; }
     color: var(--white);
     font-family: var(--principalFont);
     font-size: 3rem;
+    margin-right: 2rem;
+}
+
+.navegacion_principal__enlace:last-of-type{
+    margin: 0;
 }
 
 .navegacion_principal__enlace--activo,
@@ -88,15 +107,114 @@ h3{ font-size: 2.4rem; }
     color: var(--secondary);
 }
 
+/** GRID **/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
 
+@media (min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
+/** Productos **/
+.producto{
+    background-color: var(--primaryDark);
+    padding: 1rem;
+}
 
+.producto__nombre{
+    font-size: 4rem;
+}
 
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secondary);
+}
 
+.producto__nombre,
+.producto__precio{
+    font-family: var(--principalFont);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
 
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
 
+.grafico--camisas{
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
 
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
 
+@media(min-width: 768px){
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
 
+/** Nosotros **/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
 
+@media(min-width: 768px){
+    .nosotros{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
 
+.nosotros__imagen{
+    grid-row: 1 /2;
+}
+
+@media(min-width: 768px){
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+}
+
+/** Bloques **/
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media(min-width: 768px){
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque{
+    text-align: center;
+}
+
+.bloque__titulo{
+    margin: 0;
+}
+
+/** Página producto **/
+@media(min-width: 768px){
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
